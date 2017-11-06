@@ -7,6 +7,7 @@
 RCT_EXPORT_MODULE();
 
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+  controller.delegate = nil;
   [self.bridge.eventDispatcher sendAppEventWithName:@"SFSafariViewControllerDismissed" body:nil];
 }
 
@@ -44,7 +45,16 @@ RCT_EXPORT_METHOD(openURL: (NSString *)urlString params:(NSDictionary *)params) 
 RCT_EXPORT_METHOD(close) {
     dispatch_async(dispatch_get_main_queue(), ^{
       UIViewController *rootViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
-      [rootViewController dismissViewControllerAnimated:YES completion:nil];
+        UIViewController *rootViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+        while(rootViewController.presentedViewController) {
+            rootViewController = rootViewController.presentedViewController;
+        }
+        if(rootViewController == nil || rootViewController.childViewControllers.count == 0) {
+            return;
+        }
+        SFSafariViewController *safariViewController = (SFSafariViewController*)rootViewController.childViewControllers[0];
+        safariViewController.delegate = nil;
+        [rootViewController dismissViewControllerAnimated:YES completion:nil];
     });
 }
 
