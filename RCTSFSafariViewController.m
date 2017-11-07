@@ -44,7 +44,6 @@ RCT_EXPORT_METHOD(openURL: (NSString *)urlString params:(NSDictionary *)params) 
 
 RCT_EXPORT_METHOD(close) {
     dispatch_async(dispatch_get_main_queue(), ^{
-      UIViewController *rootViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
         UIViewController *rootViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
         while(rootViewController.presentedViewController) {
             rootViewController = rootViewController.presentedViewController;
