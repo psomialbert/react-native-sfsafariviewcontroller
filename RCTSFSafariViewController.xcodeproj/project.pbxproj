@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6524D41D1D2FB11A0060C92E /* RCTSFSafariViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6524D41C1D2FB11A0060C92E /* RCTSFSafariViewController.m */; };
+		F66741B71FB32D0E0055F887 /* RCTSFSafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66741B61FB32D0E0055F887 /* RCTSFSafariViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +25,9 @@
 
 /* Begin PBXFileReference section */
 		6524D40F1D2FAE0F0060C92E /* libRCTSFSafariViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTSFSafariViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6524D41B1D2FB1060060C92E /* RCTSFSafariViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTSFSafariViewController.h; sourceTree = "<group>"; };
 		6524D41C1D2FB11A0060C92E /* RCTSFSafariViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTSFSafariViewController.m; sourceTree = "<group>"; };
+		F66741B61FB32D0E0055F887 /* RCTSFSafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTSFSafariViewController.swift; sourceTree = "<group>"; };
+		F66741B81FB3415B0055F887 /* RCTSFSafariViewController-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCTSFSafariViewController-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +44,8 @@
 		6524D4061D2FAE0F0060C92E = {
 			isa = PBXGroup;
 			children = (
-				6524D41B1D2FB1060060C92E /* RCTSFSafariViewController.h */,
+				F66741B81FB3415B0055F887 /* RCTSFSafariViewController-Bridging-Header.h */,
+				F66741B61FB32D0E0055F887 /* RCTSFSafariViewController.swift */,
 				6524D41C1D2FB11A0060C92E /* RCTSFSafariViewController.m */,
 				6524D4101D2FAE0F0060C92E /* Products */,
 			);
@@ -87,6 +90,7 @@
 				TargetAttributes = {
 					6524D40E1D2FAE0F0060C92E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0910;
 					};
 				};
 			};
@@ -113,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6524D41D1D2FB11A0060C92E /* RCTSFSafariViewController.m in Sources */,
+				F66741B71FB32D0E0055F887 /* RCTSFSafariViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,18 +217,27 @@
 		6524D4191D2FAE0F0060C92E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RCTSFSafariViewController;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RCTSFSafariViewController-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		6524D41A1D2FAE0F0060C92E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RCTSFSafariViewController;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RCTSFSafariViewController-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

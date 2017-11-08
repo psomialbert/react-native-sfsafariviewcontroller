@@ -6,19 +6,17 @@
 
 var React = require('react-native');
 var {
-  NativeModules: {
-    SFSafariViewController,
-  },
+  NativeModules: { SFSafariViewController },
   NativeAppEventEmitter,
   DeviceEventEmitter,
-  processColor,
+  processColor
 } = React;
 
 var RCTSFSafariViewControllerExport = {
-  open: function(url, options={}) {
+  open: function(url, options = {}) {
     var parsedOptions = {};
 
-    if(options.tintColor)
+    if (options.tintColor)
       parsedOptions.tintColor = processColor(options.tintColor);
 
     SFSafariViewController.openURL(url, parsedOptions);
@@ -29,20 +27,44 @@ var RCTSFSafariViewControllerExport = {
   },
 
   addEventListener(eventName, listener) {
-    if(eventName == 'onLoad')
-      NativeAppEventEmitter.addListener('SFSafariViewControllerDidLoad', listener);
+    if (eventName == 'onLoad')
+      NativeAppEventEmitter.addListener(
+        'SFSafariViewControllerDidLoad',
+        listener
+      );
 
-    if(eventName == 'onDismiss')
-      NativeAppEventEmitter.addListener('SFSafariViewControllerDismissed', listener);
+    if (eventName == 'onDismiss')
+      NativeAppEventEmitter.addListener(
+        'SFSafariViewControllerDismissed',
+        listener
+      );
+
+    if (eventName == 'onRedirectTo')
+      NativeAppEventEmitter.addListener(
+        'SFSafariViewControllerDidRedirectTo',
+        listener
+      );
   },
 
   removeEventListener(eventName, listener) {
-    if(eventName == 'onLoad')
-      NativeAppEventEmitter.removeListener('SFSafariViewControllerDidLoad', listener);
+    if (eventName == 'onLoad')
+      NativeAppEventEmitter.removeListener(
+        'SFSafariViewControllerDidLoad',
+        listener
+      );
 
-    if(eventName == 'onDismiss')
-      NativeAppEventEmitter.removeListener('SFSafariViewControllerDismissed', listener);
-  },
+    if (eventName == 'onDismiss')
+      NativeAppEventEmitter.removeListener(
+        'SFSafariViewControllerDismissed',
+        listener
+      );
+
+    if (eventName == 'onRedirectTo')
+      NativeAppEventEmitter.addListener(
+        'SFSafariViewControllerDidRedirectTo',
+        listener
+      );
+  }
 };
 
 module.exports = RCTSFSafariViewControllerExport;

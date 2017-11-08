@@ -1,14 +1,12 @@
 react-native-sfsafariviewcontroller
 =======================
-An SFSafariViewController wrapper for React Native presenting Safari View in a modal (contrary to slide-in navigation item).
+An SFSafariViewController wrapper for React Native presenting Safari View in a modal, written in Swift.
 
 ## Installation
 
 1. Run `npm install react-native-sfsafariviewcontroller --save` in your project directory.
 - Make sure you have the `UIKit` framework included in your XCode project
-- Open your project in XCode, right click on `Libraries` and click `Add Files to "Your Project Name"`
-- Inside your node_modules, find react-native-sfsafariviewcontroller and add `RCTSFSafariViewController.xcodeproj` to your project.
-- Add `libRCTFSafariViewController.m.a` to `Build Phases -> Link Binary With Libraries`
+- Add dependency in `Podfile` to `node_modules/react-native-sfsafariviewcontroller`
 - Whenever you want to use it within your React code - `import RCTSFSafariViewController from 'react-native-sfsafariviewcontroller'`
 
 ## Usage
@@ -49,7 +47,7 @@ RCTSFSafariViewController.removeEventListener('onDismiss', this.someDismissListe
 ## License
 (The MIT License)
 
-Copyright (c) 2016 Michal Siwek
+Copyright (c) 2017 Albert Schapiro
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

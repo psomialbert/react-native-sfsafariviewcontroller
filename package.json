@@ -1,8 +1,8 @@
 {
   "name": "react-native-sfsafariviewcontroller",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description":
-    "An SFSafariViewController wrapper for React Native presenting Safari View in a modal",
+    "A Swift SFSafariViewController wrapper for React Native presenting Safari View in a modal",
   "main": "index.ios.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +23,8 @@
     "webbrowser",
     "webview",
     "uiwebview",
-    "SFSafariViewController"
+    "SFSafariViewController",
+    "swift"
   ],
   "author":
     "Albert Schapiro <albert@schapiro.se> (https://github.com/psomialbert)",
