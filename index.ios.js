@@ -4,17 +4,18 @@
  */
 'use strict';
 
-var React = require('react-native');
-var {
+const React = require('react-native');
+
+const {
   NativeModules: { SFSafariViewController },
   NativeAppEventEmitter,
   DeviceEventEmitter,
   processColor
 } = React;
 
-var RCTSFSafariViewControllerExport = {
-  open: function(url, options = {}) {
-    var parsedOptions = {};
+const RCTSFSafariViewControllerExport = {
+  open(url, options = {}) {
+    const parsedOptions = Object.assign({}, options);
 
     if (options.tintColor)
       parsedOptions.tintColor = processColor(options.tintColor);
@@ -22,7 +23,7 @@ var RCTSFSafariViewControllerExport = {
     SFSafariViewController.openURL(url, parsedOptions);
   },
 
-  close: function() {
+  close() {
     SFSafariViewController.close();
   },
 

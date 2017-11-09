@@ -7,3 +7,4 @@ RCT_EXTERN_METHOD(openURL: (NSString *)urlString
 RCT_EXTERN_METHOD(close)
 
 @end
+

@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "RCTSFSafariViewController"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "RCTSFSafariViewController"
   s.homepage     = "https://github.com/psomialbert/react-native-sfsafariviewcontroller"
   s.license      = "MIT"

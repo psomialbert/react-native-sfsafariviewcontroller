@@ -1,6 +1,6 @@
 {
   "name": "react-native-sfsafariviewcontroller",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description":
     "A Swift SFSafariViewController wrapper for React Native presenting Safari View in a modal",
   "main": "index.ios.js",
